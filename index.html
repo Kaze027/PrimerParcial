@@ -3,20 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Peliculas de Netflix</title>
+	<script type="text/javascript" src="covers.js"></script>
 </head>
 <body>
 	<h1>Top 10 de Netflix Mexico</h1>
-	<p>Marco Antonio Mendez Clak</p>
-	<p id="demo"></p>
+	<p>Nombre: Marco Antonio Mendez Clak</p>
+	<p>Numero de control: 16220009</p>
+	<p>Semestre: 9</p>
+	<p>Carrera: Ingeniería en informática</p>;
+	<p id='demo'></p>
 
 	<script>
-			var peliculas = [{
+		var peliculas = [{
 			Numero: "1",
 			Titulo: "Mision de rescate",
 			Duracion: "99M",
 			Director: "Sam Hargrave",
 			Anio: "2020",
-			Imagen: "001.png"
+			Imagen: '<img src=001.png>'
 		},
 		{
 			Numero: "2",
@@ -24,7 +28,7 @@
 			Duracion: "89M",
 			Director: "Sam Hargrave",
 			Anio: "2020",
-			Imagen: "002.png"
+			Imagen: '<img src=002.png>'
 		},
 		{
 			Numero: "3",
@@ -32,7 +36,7 @@
 			Duracion: "85M",
 			Director: "Peter Berg",
 			Anio: "2020",
-			Imagen: "003.png"
+			Imagen: '<img src=003.png>'
 		},
 		{
 			Numero: "4",
@@ -40,7 +44,7 @@
 			Duracion: "83M",
 			Director: "Michael Bay",
 			Anio: "2019",
-			Imagen: "004.png"
+			Imagen: '<img src=004.png>'
 		},
 		{
 			Numero: "5",
@@ -48,7 +52,7 @@
 			Duracion: "73M",
 			Director: "Kyle Newacheck",
 			Anio: "2019",
-			Imagen: "005.png"
+			Imagen: '<img src=005.png>'
 		},
 		{
 			Numero: "6",
@@ -56,7 +60,7 @@
 			Duracion: "64M",
 			Director: "Martin Scorsese",
 			Anio: "2019",
-			Imagen: "006.png"
+			Imagen: '<img src=006.png>'
 		},
 		{
 			Numero: "7",
@@ -64,7 +68,7 @@
 			Duracion: "63M",
 			Director: "J,C,Chandor",
 			Anio: "2019",
-			Imagen: "007.png"
+			Imagen: '<img src=007.png>'
 		},
 		{
 			Numero: "8",
@@ -72,7 +76,7 @@
 			Duracion: "59M",
 			Director: "Happy Madison",
 			Anio: "2020",
-			Imagen: "008.png"
+			Imagen: '<img src=008.png>'
 		},
 		{
 			Numero: "9",
@@ -80,7 +84,7 @@
 			Duracion: "56M",
 			Director: "Galder Gaztelu-Urrutia",
 			Anio: "2019",
-			Imagen: "009.png"
+			Imagen: '<img src=009.png>'
 		},
 		{
 			Numero: "10",
@@ -88,12 +92,16 @@
 			Duracion: "48M",
 			Director: "Chris Nelson",
 			Anio: "2019",
-			Imagen: "010.png"
-		}];
+			Imagen: '<img src=010.png>'
+		}]
 
-		peliculasStr = JSON.stringify(peliculas);
+		var info = peliculas.map(function(bar){
+			return '	'+bar.Numero+'.- '+bar.Titulo+' (' +bar.Duracion+ ') <br>  Director: ' +bar.Director+ ' / Año: ' +bar.Anio+'. <br><br>' +bar.Imagen+ '<br><br>';
+		})
 
-		document.getElementById("demo").innerHTML = peliculasStr;
+		document.getElementById("demo").innerHTML = info;
+
+		
 	</script>
 </body>
 </html>
