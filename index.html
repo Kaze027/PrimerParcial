@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Peliculas de Netflix</title>
 	<script type="text/javascript" src="covers.js"></script>
+	<link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.css">
+	<link rel="stylesheet" href="estilos.css">
+
 </head>
 <body>
 	<h1>Top 10 de Netflix Mexico</h1>
@@ -11,6 +14,7 @@
 	<p>Numero de control: 16220009</p>
 	<p>Semestre: 9</p>
 	<p>Carrera: Ingeniería en informática</p>;
+	<button onclick="construir()">Ver Lista</button>
 	<p id='demo'></p>
 
 	<script>
@@ -95,13 +99,15 @@
 			Imagen: '<img src=010.png>'
 		}]
 
-		var info = peliculas.map(function(bar){
-			return '	'+bar.Numero+'.- '+bar.Titulo+' (' +bar.Duracion+ ') <br>  Director: ' +bar.Director+ ' / Año: ' +bar.Anio+'. <br><br>' +bar.Imagen+ '<br><br>';
+		function construir(){
+			var info = peliculas.map(function(bar){
+			return '	<h3>' +bar.Numero+ '.- ' +bar.Titulo+ ' (' +bar.Duracion+ ')</h2> Director: ' +bar.Director+ ' / Año: ' +bar.Anio+ '. <br><br>	' +bar.Imagen+ '<br><br>';
 		})
 
 		document.getElementById("demo").innerHTML = info;
-
+		}
 		
+
 	</script>
 </body>
 </html>
